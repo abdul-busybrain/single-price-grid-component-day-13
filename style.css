@@ -1,0 +1,254 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* variables */
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+
+  /* ### Neutral */
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+
+  /* font */
+  --Karla: "Karla", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--Light-Gray);
+  font-family: var(--Karla);
+  font-size: 1.5rem;
+  display: grid;
+  place-content: center;
+  margin: 2rem auto 0 auto;
+}
+
+/*
+
+
+
+
+ */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 54rem;
+  text-align: left;
+  place-content: center;
+}
+
+.card1 {
+  grid-column: 1 / span 2;
+  background-color: white;
+  display: grid;
+  place-content: center;
+  padding: 2rem 2rem 2rem 6rem;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.card1-header {
+  color: var(--Cyan);
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.card1-sub-header {
+  color: var(--Bright-Yellow);
+  font-weight: 400;
+  margin-top: 0;
+  padding-top: 0.8rem;
+}
+.card1-para {
+  padding-top: 0;
+  margin-top: 0;
+  color: var(--Grayish-Blue);
+  width: 60ch;
+}
+.card2 {
+  color: white;
+  background-color: var(--Cyan);
+  display: grid;
+  place-content: center;
+  border-bottom-left-radius: 0.75rem;
+}
+
+.card3 {
+  color: var(--Light-Gray);
+  display: grid;
+  place-content: center;
+  background-color: rgb(51, 207, 205);
+  border-bottom-right-radius: 0.75rem;
+  padding: 50px;
+}
+.card3-para {
+  /* width: 24ch; */
+  font-size: 1.1rem;
+}
+
+button {
+  color: var(--Light-Gray);
+  background-color: var(--Bright-Yellow);
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
+}
+
+span {
+  color: var(--Light-Gray);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 37.5rem) {
+  body {
+    font-size: 1.6rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    padding: 3.5rem;
+  }
+
+  .card1 {
+    /* align-self: normal; */
+  }
+  .card1-text {
+  }
+  .card1-header {
+  }
+  .card1-sub-header {
+  }
+  .card1-para {
+    width: 35ch;
+  }
+  .card2 {
+    /* align-self: normal; */
+    border-bottom-left-radius: 0;
+  }
+  .card2-sub-header {
+  }
+  .card2-price {
+  }
+  .card2-para {
+    /* font-size: 1.1rem; */
+  }
+  .card3 {
+    border-bottom-left-radius: 0.75rem;
+    /* padding-left: 0; */
+  }
+  .card3-sub-header {
+  }
+  .card3-para {
+    /* width: 24ch; */
+  }
+  button {
+    width: 28rem;
+  }
+}
